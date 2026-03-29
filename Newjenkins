@@ -1,0 +1,11 @@
+node{
+    stage('SCM Check-out'){
+      def mvnHome = tool name: 'maven-3', type: 'maven'
+      git 'https://github.com/Prathambandekar/Jenkins-repository01'
+    }
+    stage('Compile-Pakcage'){
+      def mvnHome = tool name: 'maven-3', type: 'maven'
+      sh "${mvnHome}/bin/mvn"
+    
+    }
+}
